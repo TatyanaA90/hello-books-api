@@ -1,7 +1,7 @@
 from flask import Flask
 from .db import db, migrate
 from .models import book
-from .routes.book_routes import books_bp
+from .routes.book_routes import bp as books_bp
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -12,7 +12,7 @@ import os
 #     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@localhost:5432/hello_books_development'
 
 # wave_5 
-def create_app(config=None):
+def create_app(config=None): # wave_6
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
